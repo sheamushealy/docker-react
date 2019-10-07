@@ -1,4 +1,3 @@
-language: generic
 sudo: required
 services:
   - docker
@@ -6,6 +5,6 @@ services:
 before_install:
   - docker build -t sheamushealy/docker-react -f Dockerfile.dev .
 
-script
-  - docker run -e CI-true sheamushealy/docker-react npm run test -- --coverage
+script:
+  - docker run -e CI=true sheamushealy/docker-react npm run test -- --coverage
 
